@@ -23,7 +23,7 @@ namespace paint_class
 
             buttonLine.Click += (sender, e) =>
             {
-                var offsetY = 25 * _testCountLine++;
+                var offsetY = 15 * _testCountLine++;
                 _paint.Drawline(
                     GetNextTestColor(),
                     new PointF(0, 100 + offsetY),
@@ -42,19 +42,13 @@ namespace paint_class
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            _paint.PaintAll(e.Graphics, always: _always);
-            _always = false;
+            _paint.PaintAll(e.Graphics);
         }
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-            if(!_always)
-            {
-                _always = true;
-                Refresh();
-            }
+            Refresh();
         }
-        bool _always = false;
 
         internal Color GetNextTestColor()
         {

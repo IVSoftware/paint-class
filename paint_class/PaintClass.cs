@@ -78,7 +78,7 @@ namespace paint_class
             }
         }
 
-        internal void PaintAll(Graphics graphics, bool always = false)
+        internal void PaintAll(Graphics graphics, bool always = true)
         {
             if (always || _modified)
             {
