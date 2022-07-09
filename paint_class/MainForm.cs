@@ -16,26 +16,30 @@ namespace paint_class
                 Refresh();
                 Text = CurrentTestColor.ToString();
             };
+        }
 
-            // Draw diagonal line adding 25 to offset each time.
-            buttonDiag.Click += (sender, e) =>
-                _paint.DrawDiagonal(GetNextTestColor(), offsetX: 25 * _testCountDiag++);
+        // Draw diagonal line adding 25 to offset each time.
+        private void buttonDiag_Click(object sender, EventArgs e)
+        {
+            _paint.DrawDiagonal(GetNextTestColor(), offsetX: 25 * _testCountDiag++);
+        }
 
-            buttonLine.Click += (sender, e) =>
-            {
+        // Draw a line between two points
+        private void buttonLine_Click(object sender, EventArgs e)
+        {
                 var offsetY = 15 * _testCountLine++;
                 _paint.Drawline(
                     GetNextTestColor(),
                     new PointF(0, 100 + offsetY),
                     new PointF(ClientRectangle.Width, 100 + offsetY));
-            };
-
-            buttonClear.Click += (sender, e) =>
-            {
-                _paint.Clear();
-                _testCountDiag = _testCountLine = 0;
-            };
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            _paint.Clear();
+            _testCountDiag = _testCountLine = 0;
+        }
+
         int _testCountDiag = 0;
         int _testCountLine = 0;
         PaintClass _paint = new PaintClass();

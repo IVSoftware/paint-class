@@ -43,6 +43,7 @@ namespace paint_class
             this.buttonDiag.TabIndex = 0;
             this.buttonDiag.Text = "Diag";
             this.buttonDiag.UseVisualStyleBackColor = true;
+            this.buttonDiag.Click += new System.EventHandler(this.buttonDiag_Click);
             // 
             // buttonClear
             // 
@@ -53,6 +54,7 @@ namespace paint_class
             this.buttonClear.TabIndex = 0;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonLine
             // 
@@ -63,6 +65,7 @@ namespace paint_class
             this.buttonLine.TabIndex = 1;
             this.buttonLine.Text = "Line";
             this.buttonLine.UseVisualStyleBackColor = true;
+            this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
             // 
             // MainForm
             // 
