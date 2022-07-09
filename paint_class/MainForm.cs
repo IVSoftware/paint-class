@@ -10,7 +10,7 @@ namespace paint_class
         public MainForm()
         {
             InitializeComponent();
-            _paint.Refresh += (sender, e) =>
+            _paintClass.Refresh += (sender, e) =>
             {
                 // Causes the control to repaint.
                 Refresh();
@@ -19,12 +19,12 @@ namespace paint_class
         }
         private void buttonDiag_Click(object sender, EventArgs e)
         {
-            _paint.DrawDiagonal(GetNextTestColor(), offsetX: 25 * _testCountDiag++);
+            _paintClass.DrawDiagonal(GetNextTestColor(), offsetX: 25 * _testCountDiag++);
         }
         private void buttonLine_Click(object sender, EventArgs e)
         {
             var offsetY = 15 * _testCountLine++;
-            _paint.Drawline(
+            _paintClass.Drawline(
                 GetNextTestColor(),
                 new PointF(0, 100 + offsetY),
                 new PointF(ClientRectangle.Width, 100 + offsetY));
@@ -32,17 +32,17 @@ namespace paint_class
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            _paint.Clear();
+            _paintClass.Clear();
             _testCountDiag = _testCountLine = 0;
         }
 
         int _testCountDiag = 0;
         int _testCountLine = 0;
-        PaintClass _paint = new PaintClass();
+        PaintClass _paintClass = new PaintClass();
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            _paint.PaintAll(e.Graphics);
+            _paintClass.PaintAll(e.Graphics);
         }
         protected override void OnSizeChanged(EventArgs e)
         {
