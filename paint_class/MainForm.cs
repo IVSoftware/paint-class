@@ -17,21 +17,17 @@ namespace paint_class
                 Text = CurrentTestColor.ToString();
             };
         }
-
-        // Draw diagonal line adding 25 to offset each time.
         private void buttonDiag_Click(object sender, EventArgs e)
         {
             _paint.DrawDiagonal(GetNextTestColor(), offsetX: 25 * _testCountDiag++);
         }
-
-        // Draw a line between two points
         private void buttonLine_Click(object sender, EventArgs e)
         {
-                var offsetY = 15 * _testCountLine++;
-                _paint.Drawline(
-                    GetNextTestColor(),
-                    new PointF(0, 100 + offsetY),
-                    new PointF(ClientRectangle.Width, 100 + offsetY));
+            var offsetY = 15 * _testCountLine++;
+            _paint.Drawline(
+                GetNextTestColor(),
+                new PointF(0, 100 + offsetY),
+                new PointF(ClientRectangle.Width, 100 + offsetY));
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
